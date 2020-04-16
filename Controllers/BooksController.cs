@@ -10,13 +10,12 @@ namespace Fisher.Bookstore.Controllers
     [Route("api/[controller]")]
     public class BooksController : ControllerBase
     {
+        
         private IBooksRepository booksRepository;
-
         public BooksController(IBooksRepository repository)
         {
             booksRepository = repository;
         }
-
 
         [HttpGet]
         public IActionResult GetAll()
@@ -48,6 +47,7 @@ namespace Fisher.Bookstore.Controllers
         [HttpPut("{bookId}")]
         public IActionResult Put(int bookId, [FromBody] Book book)
         {
+
             if (bookId != book.Id)
             {
                 return BadRequest();
@@ -75,5 +75,6 @@ namespace Fisher.Bookstore.Controllers
             booksRepository.DeleteBook(bookId);
             return Ok();
         }
+
     }
 }
