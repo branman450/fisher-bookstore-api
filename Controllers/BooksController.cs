@@ -19,7 +19,7 @@ namespace Fisher.Bookstore.Controllers
 
 
         [HttpGet]
-        public IActionResult GetAll()
+        public IActionResult GetBooks()
         {
             return Ok(booksRepository.GetBooks());
         }
