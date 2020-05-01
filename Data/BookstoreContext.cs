@@ -26,6 +26,5 @@ namespace Fisher.Bookstore.Data
            .WithMany(a => a.BookAuthor)
            .HasForeignKey(ba => ba.AuthorId);
         }
-
     }
 }
